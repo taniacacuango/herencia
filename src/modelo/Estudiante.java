@@ -4,26 +4,29 @@
  */
 package modelo;
 
-/**
- *
- * @author PC19
- */
 public class Estudiante extends Persona {
 
-    private int idEstudiante;
-    private int numeroMatricula;
-    private String horario;
+private int idEstudiante;
+    private String numeroMatricula;
     private String jornada;
+    private int idPersona;
 
     public Estudiante() {
     }
 
-    public Estudiante(int idEstudiante, int numeroMatricula, String horario, String jornada, int idPersona, String nombre, String apellido, String cedula, int telefono, String direccion, String correoElectrinico, String sexo, String fecha_de_nacimiento) {
-        super(idPersona, nombre, apellido, cedula, telefono, direccion, correoElectrinico, sexo, fecha_de_nacimiento);
+    public Estudiante(int idEstudiante, String numeroMatricula, String jornada, int idPersona) {
         this.idEstudiante = idEstudiante;
         this.numeroMatricula = numeroMatricula;
-        this.horario = horario;
         this.jornada = jornada;
+        this.idPersona = idPersona;
+    }
+
+    public Estudiante(int idEstudiante, String numeroMatricula, String jornada, int idPersona, String nombres, String apellidos, String cedula, String direccion, String correoElectronico, String sexo, String fechaNacimiento, int telefono, String usuario, String clave) {
+        super(idPersona, nombres, apellidos, cedula, direccion, correoElectronico, sexo, fechaNacimiento, telefono, usuario, clave);
+        this.idEstudiante = idEstudiante;
+        this.numeroMatricula = numeroMatricula;
+        this.jornada = jornada;
+        this.idPersona = idPersona;
     }
 
     public int getIdEstudiante() {
@@ -34,20 +37,12 @@ public class Estudiante extends Persona {
         this.idEstudiante = idEstudiante;
     }
 
-    public int getNumeroMatricula() {
+    public String getNumeroMatricula() {
         return numeroMatricula;
     }
 
-    public void setNumeroMatricula(int numeroMatricula) {
+    public void setNumeroMatricula(String numeroMatricula) {
         this.numeroMatricula = numeroMatricula;
-    }
-
-    public String getHorario() {
-        return horario;
-    }
-
-    public void setHorario(String horario) {
-        this.horario = horario;
     }
 
     public String getJornada() {
@@ -58,22 +53,28 @@ public class Estudiante extends Persona {
         this.jornada = jornada;
     }
 
-    // Método de imprimir Estudiante
+    public int getIdPersona() {
+        return idPersona;
+    }
+
+    public void setIdPersona(int idPersona) {
+        this.idPersona = idPersona;
+    }
+
     public String imprimir() {
-        return """
-               --------DATOS DE ESTUDIANTE----------
-               Id: """ + getIdPersona() + "\n"
-                + "NOMBRE: " + getNombre() + "\n"
-                + "APELLIDO: " + getApellido() + "\n"
-                + "CEDULA: " + getCedula() + "\n"
-                + "TELÉFONO: " + getTelefono() + "\n"
-                + "DIRECCIÓN: " + getDireccion() + "\n"
-                + "CORREO ELECTRÓNICO: " + getCorreoElectrinico() + "\n"
-                + "SEXO: " + getSexo() + "\n"
-                + "FECHA DE NACIMIENTO: " + getFecha_de_nacimiento() + "\n"
-                + "ID ESTUDIANTE: " + idEstudiante + "\n"
-                + "NÚMERO DE MATRÍCULA: " + numeroMatricula + "\n"
-                + "HORARIO: " + horario + "\n"
-                + "JORNADA: " + jornada + "\n";
+        return "-------DATOS PERSONALES-----------\n"
+                + "Id:" + getIdPersona() + "\n"
+                + "Nombre:" + getNombres() + "\n"
+                + "Apellidos:" + getApellidos() + "\n"
+                + "Cédula:" + getCedula() + "\n"
+                + "Dirección:" + getDireccion() + "\n"
+                + "Correo Electrónico:" + getCorreoElectronico() + "\n"
+                + "Fecha Nacimiento:" + getFechaNacimiento() + "\n"
+                + "Sexo:" + getSexo() + "\n"
+                + "Teléfono:" + getTelefono() + "\n"
+                + "-------DATOS ESTUDIANTE------" + "\n"
+                + "Id Estudiante:" + getIdEstudiante() + "\n"
+                + "Numero de Matricula:" + getNumeroMatricula() + "\n"
+                + "jornada:" + getJornada();
     }
 }

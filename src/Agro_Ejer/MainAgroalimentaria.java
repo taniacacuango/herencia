@@ -2,14 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package vista;
+package Agro_Ejer;
 
 import java.util.Scanner;
-import modelo.PorAgua;
-import modelo.PorAire;
-import modelo.PorNitrogeno;
-import modelo.ProductoFresco;
-import modelo.ProductoRefrigerado;
+import Agro_Ejer.PorAgua;
+import Agro_Ejer.PorAire;
+import Agro_Ejer.PorNitrogeno;
+import Agro_Ejer.ProductoFresco;
+import Agro_Ejer.ProductoRefrigerado;
 
 public class MainAgroalimentaria {
     public static void main(String[] args) {

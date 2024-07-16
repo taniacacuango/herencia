@@ -10,34 +10,42 @@ package modelo;
  */
 public class Persona {
 
-    // 1.- Atributos públicos
-    private int idPersona;
-    private String nombre;
-    private String apellido;
-    private String cedula;
-    private int telefono;
-    private String direccion;
-    private String correoElectrinico;
-   private String sexo;
-    private String fecha_de_nacimiento;
 
-    // 2.- Constructores
+    //1.ATRIBUTOS
+    private int idPersona;
+    private String nombres;
+    private String apellidos;
+    private String cedula;
+    private String direccion;
+    private String correoElectronico;
+    private String sexo;
+    private String fechaNacimiento;
+    private int telefono;
+    private String usuario;
+    private String clave;
+    
+    //2.MÉTODOS CONSTRUCTORES 
+
     public Persona() {
     }
 
-    public Persona(int idPersona, String nombre, String apellido, String cedula, int telefono, String direccion, String correoElectrinico, String sexo, String fecha_de_nacimiento) {
+    public Persona(int idPersona, String nombres, String apellidos, String cedula, String direccion, String correoElectronico, String sexo, String fechaNacimiento, int telefono, String usuario, String clave) {
         this.idPersona = idPersona;
-        this.nombre = nombre;
-        this.apellido = apellido;
+        this.nombres = nombres;
+        this.apellidos = apellidos;
         this.cedula = cedula;
-        this.telefono = telefono;
         this.direccion = direccion;
-        this.correoElectrinico = correoElectrinico;
+        this.correoElectronico = correoElectronico;
         this.sexo = sexo;
-        this.fecha_de_nacimiento = fecha_de_nacimiento;
+        this.fechaNacimiento = fechaNacimiento;
+        this.telefono = telefono;
+        this.usuario = usuario;
+        this.clave = clave;
     }
 
-    // Métodos getters y setters
+      
+
+    //3. ENCAPSULAMIENTO
     public int getIdPersona() {
         return idPersona;
     }
@@ -46,21 +54,7 @@ public class Persona {
         this.idPersona = idPersona;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
+   
 
     public String getCedula() {
         return cedula;
@@ -68,14 +62,6 @@ public class Persona {
 
     public void setCedula(String cedula) {
         this.cedula = cedula;
-    }
-
-    public int getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(int telefono) {
-        this.telefono = telefono;
     }
 
     public String getDireccion() {
@@ -86,12 +72,28 @@ public class Persona {
         this.direccion = direccion;
     }
 
-    public String getCorreoElectrinico() {
-        return correoElectrinico;
+    public String getCorreoElectronico() {
+        return correoElectronico;
     }
 
-    public void setCorreoElectrinico(String correoElectrinico) {
-        this.correoElectrinico = correoElectrinico;
+    public void setCorreoElectronico(String correoElectronico) {
+        this.correoElectronico = correoElectronico;
+    }
+
+    public String getNombres() {
+        return nombres;
+    }
+
+    public void setNombres(String nombres) {
+        this.nombres = nombres;
+    }
+
+    public String getApellidos() {
+        return apellidos;
+    }
+
+    public void setApellidos(String apellidos) {
+        this.apellidos = apellidos;
     }
 
     public String getSexo() {
@@ -102,25 +104,54 @@ public class Persona {
         this.sexo = sexo;
     }
 
-    public String getFecha_de_nacimiento() {
-        return fecha_de_nacimiento;
+    public String getFechaNacimiento() {
+        return fechaNacimiento;
     }
 
-    public void setFecha_de_nacimiento(String fecha_de_nacimiento) {
-        this.fecha_de_nacimiento = fecha_de_nacimiento;
+    public void setFechaNacimiento(String fechaNacimiento) {
+        this.fechaNacimiento = fechaNacimiento;
     }
 
-    // 4.- Método de reglas de negocio
+    public int getTelefono() {
+        return telefono;
+    }
+
+    public void setTelefono(int telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getClave() {
+        return clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+    }
+    
+    
+
+    //4. MÉTODOS DE REGLA DE NEGOCIO
     public String imprimir() {
-        return "--------DATOS DE PERSONA----------\n"
-                + "Id: " + getIdPersona() + "\n"
-                + "NOMBRE: " + getNombre() + "\n"
-                + "APELLIDO: " + getApellido() + "\n"
-                + "CEDULA: " + getCedula() + "\n"
-                + "TELÉFONO: " + getTelefono() + "\n"
-                + "DIRECCIÓN: " + getDireccion() + "\n"
-                + "CORREO ELECTRÓNICO: " + getCorreoElectrinico() + "\n"
-                + "SEXO: " + getSexo() + "\n"
-                + "FECHA DE NACIMIENTO: " + getFecha_de_nacimiento() + "\n";
+        return "-------DATOS PERSONALES-----------\n"
+                + "Id:" + getIdPersona() + "\n"
+                + "Nombre:" + getNombres() + "\n"
+                + "Apellidos:" + getApellidos() + "\n"
+                + "Cédula:" + getCedula() + "\n"
+                + "Dirección:" + getDireccion() + "\n"
+                + "Usuario:" + getUsuario()+ "\n"
+                + "Clave:" + "***************"+ "\n"
+                + "Correo Electrónico:" + getCorreoElectronico()+ "\n"
+                +"Fecha Nacimiento:"+getFechaNacimiento()+ "\n"
+                +"Sexo:"+getSexo()+ "\n"
+                +"Teléfono:"+getTelefono();
+
     }
 }

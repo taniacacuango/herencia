@@ -10,26 +10,33 @@ package modelo;
  */
 public class Administrativo extends Persona {
 
-    private int id;
+    private int idAdministrativo;
     private String cargo;
     private String area;
 
     public Administrativo() {
     }
 
-    public Administrativo(int idPersona, String nombre, String apellido, String cedula, int telefono, String direccion, String correoElectrinico, String sexo, String fecha_de_nacimiento, int id, String cargo, String area) {
-        super(idPersona, nombre, apellido, cedula, telefono, direccion, correoElectrinico, sexo, fecha_de_nacimiento);
-        this.id = id;
+    public Administrativo(int idAdministrativo, String cargo, String area) {
+        this.idAdministrativo = idAdministrativo;
         this.cargo = cargo;
         this.area = area;
     }
 
-    public int getId() {
-        return id;
+    public Administrativo(int idAdministrativo, String cargo, String area, int idPersona, String nombres, String apellidos, String cedula, String direccion, String correoElectronico, String sexo, String fechaNacimiento, int telefono, String usuario, String clave) {
+        super(idPersona, nombres, apellidos, cedula, direccion, correoElectronico, sexo, fechaNacimiento, telefono, usuario, clave);
+        this.idAdministrativo = idAdministrativo;
+        this.cargo = cargo;
+        this.area = area;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    
+    public int getIdAdministrativo() {
+        return idAdministrativo;
+    }
+
+    public void setIdAdministrativo(int idAdministrativo) {
+        this.idAdministrativo = idAdministrativo;
     }
 
     public String getCargo() {
@@ -48,21 +55,22 @@ public class Administrativo extends Persona {
         this.area = area;
     }
 
-    // Método de impresión para Administrativo
     public String imprimir() {
-        return """
-               --------DATOS DE ADMINISTRATIVO----------
-               Id: """ + getIdPersona() + "\n"
-                + "NOMBRE: " + getNombre() + "\n"
-                + "APELLIDO: " + getApellido() + "\n"
-                + "CEDULA: " + getCedula() + "\n"
-                + "TELÉFONO: " + getTelefono() + "\n"
-                + "DIRECCIÓN: " + getDireccion() + "\n"
-                + "CORREO ELECTRÓNICO: " + getCorreoElectrinico() + "\n"
-                + "SEXO: " + getSexo() + "\n"
-                + "FECHA DE NACIMIENTO: " + getFecha_de_nacimiento() + "\n"
-                + "ID: " + id + "\n"
-                + "CARGO: " + cargo + "\n"
-                + "ÁREA: " + area + "\n";
+        return "-------DATOS PERSONALES-----------\n"
+                + "Id:" + getIdPersona() + "\n"
+                + "Nombre:" + getNombres() + "\n"
+                + "Apellidos:" + getApellidos() + "\n"
+                + "Cédula:" + getCedula() + "\n"
+                + "Dirección:" + getDireccion() + "\n"
+                + "Correo Electrónico:" + getCorreoElectronico()+ "\n"
+                +"Fecha Nacimiento:"+getFechaNacimiento()+ "\n"
+                +"Sexo:"+getSexo()+ "\n"
+                +"Teléfono:"+getTelefono()+ "\n"
+                +"-------DATOS ADMINISTRATIVOS------"+ "\n"
+                +"Id Administrativo:"+getIdAdministrativo()+ "\n"
+                +"Cargo:"+getCargo()+ "\n"
+                +"Área:"+getArea();
+
     }
+    
 }

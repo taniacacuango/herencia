@@ -6,41 +6,53 @@
 package modelo;
 
 public class Docente extends Persona {
-//declaraci de atrivutos
+//1.-ATRIBUTOS PROPIOS 
     private int idDocente;
-    private String especializacion;
+    private String especialidad;
     private String titulo;
-    private String tipo;
-    private int rangosalarial;
-//COSTRUCTOR VACIO
+    private String registroSenescyt;
+    private String escalaSalarial;
+    //2.-CONSTRUCTORES
     public Docente() {
     }
-    //CONSTRUCTOR CON ARGUMENTOS
 
-    public Docente(int idDocente, String especializacion, String titulo, String tipo, int rangosalarial) {
+    public Docente(int idDocente, String especialidad, String titulo, String registroSenescyt, String escalaSalarial) {
         this.idDocente = idDocente;
-        this.especializacion = especializacion;
+        this.especialidad = especialidad;
         this.titulo = titulo;
-        this.tipo = tipo;
-        this.rangosalarial = rangosalarial;
+        this.registroSenescyt = registroSenescyt;
+        this.escalaSalarial = escalaSalarial;
     }
     
-//CONSTRUCTOR CON ARGUMENTOS DE LA SUPER CLASE
-    public Docente(int idPersona, String nombre, String apellido, String cedula, int telefono, String direccion, String correoElectrinico, String sexo, String fecha_de_nacimiento,int idDocente, String especializacion, String titulo, String tipo, int rangosalarial) {
-        super(idPersona, nombre, apellido, cedula, telefono, direccion, correoElectrinico, sexo, fecha_de_nacimiento);
-        this.idDocente=idDocente;
-        this.especializacion = especializacion;
+    //CONSTRUCTOR SUPERCLASE
+
+    public Docente(int idDocente, String especialidad, String titulo, String registroSenescyt, String escalaSalarial, int idPersona, String nombres, String apellidos, String cedula, String direccion, String correoElectronico, String sexo, String fechaNacimiento, int telefono, String usuario, String clave) {
+        super(idPersona, nombres, apellidos, cedula, direccion, correoElectronico, sexo, fechaNacimiento, telefono, usuario, clave);
+        this.idDocente = idDocente;
+        this.especialidad = especialidad;
         this.titulo = titulo;
-        this.tipo = tipo;
-        this.rangosalarial = rangosalarial;
+        this.registroSenescyt = registroSenescyt;
+        this.escalaSalarial = escalaSalarial;
     }
 
-    public String getEspecializacion() {
-        return especializacion;
+   
+
+  
+
+    public int getIdDocente() {
+        return idDocente;
     }
 
-    public void setEspecializacion(String especializacion) {
-        this.especializacion = especializacion;
+    public void setIdDocente(int idDocente) {
+        this.idDocente = idDocente;
+    }
+
+    public String getEspecialidad() {
+        return especialidad;
+    }
+
+    public void setEspecialidad(String especialidad) {
+        this.especialidad = especialidad;
     }
 
     public String getTitulo() {
@@ -51,49 +63,41 @@ public class Docente extends Persona {
         this.titulo = titulo;
     }
 
-    public String getTipo() {
-        return tipo;
+    public String getRegistroSenescyt() {
+        return registroSenescyt;
     }
 
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
+    public void setRegistroSenescyt(String registroSenescyt) {
+        this.registroSenescyt = registroSenescyt;
     }
 
-    public int getRangosalarial() {
-        return rangosalarial;
+    public String getEscalaSalarial() {
+        return escalaSalarial;
     }
 
-    public void setRangosalarial(int rangosalarial) {
-        this.rangosalarial = rangosalarial;
+    public void setEscalaSalarial(String escalaSalarial) {
+        this.escalaSalarial = escalaSalarial;
+    }
+    
+    public String imprimir() {
+        return "-------DATOS PERSONA-----------\n"
+                + "Id:" + getIdPersona() + "\n"
+                + "Nombre:" + getNombres() + "\n"
+                + "Apellidos:" + getApellidos() + "\n"
+                + "Cédula:" + getCedula() + "\n"
+                + "Dirección:" + getDireccion() + "\n"
+                + "Correo Electrónico:" + getCorreoElectronico()+ "\n"
+                +"Fecha Nacimiento:"+getFechaNacimiento()+ "\n"
+                +"Sexo:"+getSexo()+ "\n"
+                +"Teléfono:"+getTelefono()+"\n"
+                +"-------DATOS DOCENTES------------\n"+
+                "Id Docente:"+getIdDocente()+ "\n"
+                +"Especialidad;"+getEspecialidad()+ "\n"
+                +"Título:"+getTitulo()+ "\n"
+                +"Registro Senescyt:"+getRegistroSenescyt()+ "\n"
+                +"Escala Salarial:"+getEscalaSalarial();
+
     }
 
-    public int getIdDocente() {
-        return idDocente;
-    }
-
-    public void setIdDocente(int idDocente) {
-        this.idDocente = idDocente;
-    }
-
-  
    
-public String imprimir() {
-        return """
-               --------DATOS DE DOCENTE----------
-               Id: """ + getIdPersona() + "\n"
-                + "NOMBRE: " + getNombre() + "\n"
-                + "APELLIDO: " + getApellido() + "\n"
-                + "CEDULA: " + getCedula() + "\n"
-                + "TELÉFONO: " + getTelefono() + "\n"
-                + "DIRECCIÓN: " + getDireccion() + "\n"
-                + "CORREO ELECTRÓNICO: " + getCorreoElectrinico() + "\n"
-                + "SEXO: " + getSexo() + "\n"
-                + "FECHA DE NACIMIENTO: " + getFecha_de_nacimiento() + "\n"
-                + "id: " + getIdDocente()+ "\n"
-                + "ESPECIALIZACIÓN: " + getEspecializacion() + "\n"
-                + "TÍTULO: " + getTitulo() + "\n"
-                + "TIPO: " + getTipo() + "\n"
-                + "RANGO SALARIAL: " + getRangosalarial() + "\n";
-    }
 }
-
